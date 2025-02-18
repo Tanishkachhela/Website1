@@ -1,4 +1,6 @@
 #!/bin/bash
-sudo apt-get update
-sudo apt-get -y install apache2
-sudo rm /var/www/html/index.html
+sudo yum update -y  # Use yum instead of apt-get
+sudo yum install -y httpd  # Install Apache (httpd) for Amazon Linux
+sudo systemctl start httpd  # Start Apache
+sudo systemctl enable httpd  # Enable Apache on boot
+sudo rm -f /var/www/html/index.html  # Avoid error if file doesn't exist
